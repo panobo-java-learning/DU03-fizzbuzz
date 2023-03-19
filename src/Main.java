@@ -2,18 +2,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String output = "";
         for (int i = 1; i <= 100; i++) {
-            if (i % 3 == 0) { output += "Fizz"; }
-            if (i % 5 == 0) { output += "Buzz"; }
+            String output = markFizzBuzz(i);
 
-            if (output.isBlank()) {
-                System.out.println(i);
-            } else {
-                System.out.println(output);
-            }
-            output = "";
+            System.out.println(
+                    output.isBlank() ? i : output
+            );
         }
+    }
 
+    public static String markFizzBuzz(int number) {
+        String result = "";
+        if (number % 3 == 0) { result += "Fizz"; }
+        if (number % 5 == 0) { result += "Buzz"; }
+        return result;
     }
 }
